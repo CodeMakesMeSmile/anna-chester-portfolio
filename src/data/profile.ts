@@ -57,6 +57,12 @@ export type WorkItem = {
   links?: ProjectLink[];
 };
 
+const heroCtas: CallToAction[] = [
+  { label: "View Work", href: "#work", variant: "primary" },
+  { label: "See Experience", href: "#experience", variant: "secondary" },
+  { label: "Contact", href: "#contact", variant: "secondary" }
+];
+
 export const profile = {
   name: "Anna Chester",
   title: "Full Stack Software Engineer",
@@ -78,11 +84,7 @@ export const profile = {
       "From business-critical admin workflows to cross-platform mobile features, the work spans reliable software across frontend, backend, database, and release surfaces.",
     supportingText:
       "Recent implementation has included internal enterprise applications, multilingual web and mobile experiences, referral and payment flows, and technical mentorship for 1,000+ students. Currently completing a final semester while working full time, freelancing, and continuing to support students as a University of Toronto teaching assistant.",
-    ctas: [
-      { label: "View Work", href: "#work", variant: "primary" },
-      { label: "See Experience", href: "#experience", variant: "secondary" },
-      { label: "Contact", href: "#contact", variant: "secondary" }
-    ] satisfies CallToAction[],
+    ctas: heroCtas,
     focusLabel: "Current focus",
     focusTitle: "Production full-stack delivery across web, mobile, and internal systems",
     focusItems: [
