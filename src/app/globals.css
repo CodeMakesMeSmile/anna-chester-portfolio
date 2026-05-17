@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-bg: 249 246 239;
+  --color-surface: 255 251 245;
+  --color-surface-strong: 241 235 225;
+  --color-text: 24 29 28;
+  --color-muted: 89 98 91;
+  --color-line: 175 187 178;
+  --color-focus: 60 131 88;
+  --color-moss: 77 115 86;
+  --color-fern: 134 180 144;
+  --color-clay: 187 131 103;
+  --color-lilac: 157 147 194;
+  --color-shadow: 14 18 17;
+  --color-grid: 56 72 60;
+}
+
+html.dark {
+  color-scheme: dark;
+  --color-bg: 10 15 14;
+  --color-surface: 20 28 26;
+  --color-surface-strong: 29 40 36;
+  --color-text: 240 245 238;
+  --color-muted: 181 191 181;
+  --color-line: 77 92 84;
+  --color-focus: 173 223 181;
+  --color-moss: 153 185 151;
+  --color-fern: 196 228 196;
+  --color-clay: 214 160 130;
+  --color-lilac: 194 186 224;
+  --color-shadow: 1 4 4;
+  --color-grid: 157 192 165;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: rgb(var(--color-bg));
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgb(var(--color-fern) / 0.16), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgb(var(--color-lilac) / 0.14), transparent 28%),
+    rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgb(var(--color-fern) / 0.5);
+  color: rgb(var(--color-text));
+}
+
+@layer components {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 rounded-full bg-text px-4 py-2 text-sm font-semibold text-bg shadow-soft focus-ring;
+    transform: translateY(-160%);
+  }
+
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
+  .page-grid {
+    background-image:
+      linear-gradient(rgb(var(--color-grid) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--color-grid) / 0.1) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+
+  .section-shell {
+    @apply rounded-[2rem] border shadow-soft backdrop-blur;
+    border-color: rgb(var(--color-line) / 0.75);
+    background-color: rgb(var(--color-surface) / 0.82);
+  }
+
+  .section-kicker {
+    @apply text-sm font-semibold uppercase tracking-[0.32em] text-moss;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-text px-6 py-3 text-sm font-semibold text-bg shadow-soft transition duration-300 hover:bg-moss motion-safe:hover:-translate-y-0.5 focus-ring;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold text-text transition duration-300 motion-safe:hover:-translate-y-0.5 focus-ring;
+    border-color: rgb(var(--color-line) / 0.8);
+    background-color: rgb(var(--color-surface) / 0.86);
+  }
+
+  .button-secondary:hover {
+    border-color: rgb(var(--color-moss) / 0.55);
+    background-color: rgb(var(--color-surface-strong) / 0.8);
+  }
+
+  .button-ghost {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold text-text transition duration-300 motion-safe:hover:-translate-y-0.5 focus-ring;
+    border-color: rgb(var(--color-text) / 0.12);
+  }
+
+  .button-ghost:hover {
+    border-color: rgb(var(--color-moss) / 0.55);
+    background-color: rgb(var(--color-text) / 0.05);
+  }
+
+  .tag {
+    @apply inline-flex min-h-9 items-center rounded-full border px-3 py-1.5 text-xs font-medium;
+    border-color: rgb(var(--color-line) / 0.75);
+    background-color: rgb(var(--color-surface-strong) / 0.72);
+    color: rgb(var(--color-text) / 0.76);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
