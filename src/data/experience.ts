@@ -12,20 +12,20 @@ export type ExperienceItem = {
  */
 export const experience: ExperienceItem[] = [
   {
-    role: "Full-Stack Software Developer",
+    role: "Senior Full-Stack Developer",
     company: "ZEVA Global",
-    timeframe: "Co-op → Senior track",
+    timeframe: "2024 – Present",
     summary:
-      "Production web and mobile software across referral & promotions, driver and fleet experiences, maps, analytics, translations, and payment-enabled signup — promoted from co-op to a senior track while shipping.",
-    tags: ["Angular", "Flutter", "Django", "PostgreSQL", "Payments", "Translations"]
+      "Production web and mobile software, promoted from co-op to senior. Built a cross-platform referral & promotions engine, an internal operations console, on-device computer vision, and live maps, analytics, and payment-enabled signup.",
+    tags: ["Angular", "Flutter", "Django", "PostgreSQL", "ML Kit", "Payments"]
   },
   {
-    role: "Software Engineering Co-op",
+    role: "Software Engineer, Co-op",
     company: "DBRS Morningstar",
     timeframe: "2023",
     summary:
-      "Contributed in an enterprise engineering environment where maintainability, code quality, and team standards mattered; supported SonarQube integration in core pipelines.",
-    tags: ["Enterprise software", "Internal tools", "SonarQube", "CI/CD", "Code quality"]
+      "Full-stack web development in an enterprise agile environment with Angular, Node.js, .NET, and MySQL — and led the SonarQube rollout by standing up CI/CD pipelines in Jenkins and TeamCity so analysis ran on every commit and pull request.",
+    tags: ["Angular", ".NET", "Node.js", "MySQL", "Jenkins", "TeamCity", "SonarQube", "CI/CD"]
   },
   {
     role: "Teaching Assistant & Technical Mentor",

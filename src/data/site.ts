@@ -19,6 +19,8 @@ export const site = {
   location: "Toronto, Canada",
   email: "annachester02@gmail.com",
   linkedin: "https://www.linkedin.com/in/anna-chester?originalSubdomain=ca",
+  github: "https://github.com/CodeMakesMeSmile",
+  resume: "/Anna_Chester_Resume.pdf",
   nav: [
     { label: "Work", href: "#work" },
     { label: "Skills", href: "#skills" },

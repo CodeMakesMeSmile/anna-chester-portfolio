@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { site } from "@/data/site";
 
 /**
  * Signature moment #1. The headline is plain server-rendered HTML so it is the
@@ -29,6 +30,9 @@ export function Hero() {
           </Button>
           <Button href="#contact" variant="secondary">
             Get in touch
+          </Button>
+          <Button href={site.resume} variant="ghost" external>
+            Résumé
           </Button>
         </div>
       </div>
