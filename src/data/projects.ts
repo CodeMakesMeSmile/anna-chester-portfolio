@@ -184,11 +184,11 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Real-time, on-device computer vision on mobile — face detection for identity verification and object detection for photo validation.",
     intro:
-      "Not many full-stack developers ship computer vision. On mobile, I used Google ML Kit for real-time face detection to support identity verification, and object detection plus image labeling to validate user photos — all on-device.",
+      "Not many full-stack developers ship computer vision. On mobile, I used Google ML Kit for real-time face detection to support identity verification, and object detection plus image labeling to validate vehicle photos before upload — all on-device, with a graceful fallback when ML isn't available.",
     problem:
       "Identity and photo checks had to happen in real time, on the device, without sending raw images to a server for every frame.",
     owned:
-      "Integrated Google ML Kit on-device: real-time face detection for identity verification, and object detection plus image labeling to check that submitted photos matched what was expected.",
+      "Integrated Google ML Kit on-device: real-time face detection for identity verification, and object detection plus image labeling to check that submitted vehicle photos matched what was expected.",
     hardParts: [
       "Running detection in real time on-device without degrading the experience.",
       "Turning noisy detection results into a clear pass or fail for users.",

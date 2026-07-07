@@ -1,15 +1,20 @@
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
+import { EmailLink } from "@/components/ui/EmailLink";
 
 type ContactProps = {
   heading: string;
   body: string;
   email: string;
   linkedin: string;
+  github: string;
+  resume: string;
   tags: string[];
 };
 
-export function Contact({ heading, body, email, linkedin, tags }: ContactProps) {
+export function Contact({ heading, body, email, linkedin, github, resume, tags }: ContactProps) {
+  const [emailUser, emailDomain] = email.split("@");
+
   return (
     <section id="contact" className="scroll-mt-28">
       <div className="section-shell relative overflow-hidden p-7 shadow-glow sm:p-10 lg:p-12">
@@ -34,12 +39,18 @@ export function Contact({ heading, body, email, linkedin, tags }: ContactProps) 
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-            <Button href={`mailto:${email}`} variant="primary">
+          <div className="grid grid-cols-2 gap-3 lg:w-64">
+            <EmailLink user={emailUser} domain={emailDomain} className="button-primary w-full">
               Email me
+            </EmailLink>
+            <Button href={resume} variant="secondary" external className="w-full">
+              Résumé
             </Button>
-            <Button href={linkedin} variant="secondary" external>
+            <Button href={linkedin} variant="secondary" external className="w-full">
               LinkedIn
+            </Button>
+            <Button href={github} variant="secondary" external className="w-full">
+              GitHub
             </Button>
           </div>
         </div>

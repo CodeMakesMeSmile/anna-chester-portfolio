@@ -9,6 +9,7 @@ type Environment = {
   tags: string[];
   href: string;
   cta: string;
+  live?: string;
 };
 
 // Range first: four environments across the whole stack. Each links to depth —
@@ -21,7 +22,8 @@ const environments: Environment[] = [
       "A storefront built concept to deployed — product, checkout, and orders on a real data layer. The live, clickable anchor.",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
     href: "/work/banu",
-    cta: "Read case study"
+    cta: "Read case study",
+    live: "https://banubeauty.ca"
   },
   {
     name: "ZEVA referral engine",
@@ -76,12 +78,24 @@ export function WorkRail() {
                 <Chip key={tag}>{tag}</Chip>
               ))}
             </div>
-            <Link
-              href={item.href}
-              className="mt-6 inline-flex items-center gap-2 font-mono text-sm font-medium text-moss transition hover:gap-3 focus-ring"
-            >
-              {item.cta} <span aria-hidden="true">→</span>
-            </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <Link
+                href={item.href}
+                className="inline-flex items-center gap-2 font-mono text-sm font-medium text-moss transition hover:gap-3 focus-ring"
+              >
+                {item.cta} <span aria-hidden="true">→</span>
+              </Link>
+              {item.live ? (
+                <a
+                  href={item.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-mono text-sm text-muted transition hover:text-text focus-ring"
+                >
+                  Visit live site <span aria-hidden="true">↗</span>
+                </a>
+              ) : null}
+            </div>
           </article>
         ))}
       </div>

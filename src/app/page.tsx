@@ -34,6 +34,8 @@ export default function Home() {
             body={site.contact.body}
             email={site.email}
             linkedin={site.linkedin}
+            github={site.github}
+            resume={site.resume}
             tags={site.contact.tags}
           />
         </main>
