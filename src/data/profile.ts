@@ -71,10 +71,9 @@ export const profile = {
   email: "anna@primestandard.ca",
   location: "Canada",
   navItems: [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
     { label: "Work", href: "#work" },
+    { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" }
   ] satisfies NavItem[],
   hero: {

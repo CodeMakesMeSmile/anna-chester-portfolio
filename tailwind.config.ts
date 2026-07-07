@@ -16,11 +16,22 @@ const config: Config = {
         moss: "rgb(var(--color-moss) / <alpha-value>)",
         fern: "rgb(var(--color-fern) / <alpha-value>)",
         clay: "rgb(var(--color-clay) / <alpha-value>)",
+        amber: "rgb(var(--color-amber) / <alpha-value>)",
         lilac: "rgb(var(--color-lilac) / <alpha-value>)"
       },
       fontFamily: {
-        sans: ["var(--font-body)", "Manrope", "ui-sans-serif", "system-ui"],
-        display: ["var(--font-display)", "Space Grotesk", "ui-sans-serif", "system-ui"]
+        sans: [
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ],
+        display: ["var(--font-display)", "Fraunces", "Georgia", "Cambria", "ui-serif", "serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
       },
       boxShadow: {
         soft: "0 24px 60px rgb(var(--color-shadow) / 0.16)",

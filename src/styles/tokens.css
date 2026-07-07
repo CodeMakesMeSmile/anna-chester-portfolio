@@ -1,0 +1,57 @@
+/**
+ * Glasshouse design tokens.
+ *
+ * Two art-directed palettes, not a single inverted one:
+ *  - :root      light  -> a bright, sunlit daytime greenhouse (airy pale greens,
+ *                         cream glass, warm brass, deep-green ink).
+ *  - html.dark  dark   -> the signature twilight greenhouse from the brand brief
+ *                         (deep green-black, amber light through glass, moss + brass).
+ *
+ * Colors are stored as space-separated sRGB channels so Tailwind can apply
+ * alpha via `rgb(var(--color-x) / <alpha-value>)`.
+ * Dark palette anchors: Product Identity §6 (twilight greenhouse).
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Structure */
+  --color-bg: 243 244 236; /* warm pale green-cream — sunlit glass */
+  --color-surface: 252 253 248; /* near-white glass panel */
+  --color-surface-strong: 233 237 224; /* soft green raised panel */
+  --color-text: 24 40 30; /* deep green ink */
+  --color-muted: 74 92 80; /* muted green-gray (AA on bg) */
+  --color-line: 197 208 190; /* soft green hairline */
+  --color-focus: 47 107 71; /* deep moss focus ring */
+  --color-shadow: 30 45 34; /* green-tinted shadow */
+  --color-grid: 60 100 72; /* faint structural grid */
+
+  /* Accents (deepened for contrast on a light ground) */
+  --color-moss: 60 110 76; /* #3c6e4c primary green */
+  --color-fern: 108 150 104; /* #6c9668 mid green */
+  --color-clay: 168 122 66; /* #a87a42 brass */
+  --color-amber: 200 156 92; /* #c89c5c warm amber accent */
+  --color-lilac: 138 146 160; /* soft cool sage-gray */
+}
+
+html.dark {
+  color-scheme: dark;
+
+  /* Structure */
+  --color-bg: 11 20 16; /* #0b1410 deep green-black */
+  --color-surface: 16 27 22; /* #101b16 charcoal green panel */
+  --color-surface-strong: 24 37 30; /* #18251e raised panel */
+  --color-text: 238 240 232; /* #eef0e8 ivory */
+  --color-muted: 169 179 164; /* #a9b3a4 sage-gray */
+  --color-line: 74 92 82; /* #4a5c52 moss-gray hairline */
+  --color-focus: 199 214 160; /* #c7d6a0 lime — visible ring on dark */
+  --color-shadow: 2 6 4; /* near-black green */
+  --color-grid: 155 189 130; /* faint moss grid */
+
+  /* Accents (from the twilight palette) */
+  --color-moss: 155 189 130; /* #9bbd82 primary green */
+  --color-fern: 199 214 160; /* #c7d6a0 muted lime */
+  --color-clay: 201 168 106; /* #c9a86a brass */
+  --color-amber: 231 207 156; /* #e7cf9c pale amber light */
+  --color-lilac: 176 186 196; /* soft cool sage */
+}
