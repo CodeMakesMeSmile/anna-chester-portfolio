@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { NavItem } from "@/data/profile";
+import type { NavItem } from "@/data/site";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 type NavProps = {

@@ -1,6 +1,6 @@
 import { Chip } from "@/components/ui/Chip";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import type { ExperienceItem } from "@/data/profile";
+import type { ExperienceItem } from "@/data/experience";
 
 export function ExperienceTimeline({ items }: { items: ExperienceItem[] }) {
   return (

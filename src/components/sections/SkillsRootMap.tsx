@@ -1,31 +1,94 @@
-import { Chip } from "@/components/ui/Chip";
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import type { SkillGroup } from "@/data/profile";
+import { skillEvidence } from "@/data/skills";
+import { cn } from "@/lib/cn";
+
+// Where each evidence target lives, so a connection can link through to depth.
+const targetHref: Record<string, string> = {
+  "Banu Beauty / La Vianue": "/work/banu",
+  "ZEVA Global": "/work/zeva-referral",
+  "HAIL Admin": "/work/hail",
+  "University of Toronto": "#teaching",
+  "DBRS Morningstar": "#experience"
+};
 
 /**
- * Skills in context. Phase A renders the grouped foundation; the interactive
- * root-map visualization is layered on in Phase B.
+ * Interactive root-map: skills are the roots; selecting one traces it to the
+ * real systems that prove it. Keyboard-accessible and light on motion.
  */
-export function SkillsRootMap({ groups }: { groups: SkillGroup[] }) {
+export function SkillsRootMap() {
+  const [selected, setSelected] = useState(skillEvidence[0].skill);
+  const active = skillEvidence.find((entry) => entry.skill === selected) ?? skillEvidence[0];
+
   return (
     <section id="skills" className="scroll-mt-28">
       <SectionHeading
         eyebrow="Skills in context"
-        title="A full-stack foundation with production depth."
-        description="Grouped by the systems behind the work — interfaces, services, data, mobile, payments, and the practices that keep software reliable."
+        title="I don't just know these tools — I've used them inside real systems."
+        description="Select a skill to trace it to the production work behind it. Each connection links to the project."
       />
-      <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {groups.map((group) => (
-          <article key={group.title} className="section-shell h-full p-6 sm:p-7">
-            <h3 className="font-display text-xl font-semibold tracking-tight">{group.title}</h3>
-            <p className="mt-3 text-sm leading-7 text-text/74">{group.description}</p>
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {group.items.map((item) => (
-                <Chip key={item}>{item}</Chip>
-              ))}
-            </div>
-          </article>
-        ))}
+      <div className="section-shell mt-8 p-6 sm:p-8">
+        <div className="flex flex-wrap gap-2.5" role="group" aria-label="Skills">
+          {skillEvidence.map((entry) => {
+            const isActive = entry.skill === selected;
+            return (
+              <button
+                key={entry.skill}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setSelected(entry.skill)}
+                className={cn(
+                  "inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 font-mono text-xs font-medium transition focus-ring",
+                  isActive
+                    ? "border-moss/70 bg-moss/15 text-moss"
+                    : "border-line/70 bg-surfaceStrong/60 text-text/70 hover:border-moss/50 hover:text-text"
+                )}
+              >
+                {entry.skill}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-7 border-t border-line/60 pt-7">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{active.category}</p>
+          <p className="mt-2 max-w-2xl text-base leading-7 text-text/80">{active.whyItMatters}</p>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {active.connections.map((connection) => {
+              const href = targetHref[connection.target];
+              const body = (
+                <>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-fern" aria-hidden="true" />
+                    <p className="font-display text-sm font-semibold tracking-tight">
+                      {connection.target}
+                    </p>
+                  </div>
+                  <p className="mt-2 font-mono text-xs text-moss">{connection.label}</p>
+                  <p className="mt-2 text-sm leading-6 text-text/74">{connection.evidence}</p>
+                </>
+              );
+
+              return (
+                <li key={`${connection.target}-${connection.label}`}>
+                  {href ? (
+                    <Link
+                      href={href}
+                      className="block h-full rounded-2xl border border-line/70 bg-bg/40 p-4 transition hover:border-moss/50 hover:bg-surfaceStrong/50 focus-ring"
+                    >
+                      {body}
+                    </Link>
+                  ) : (
+                    <div className="h-full rounded-2xl border border-line/70 bg-bg/40 p-4">{body}</div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

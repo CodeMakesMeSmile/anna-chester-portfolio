@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Chip } from "@/components/ui/Chip";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -6,18 +7,21 @@ type Environment = {
   environment: string;
   summary: string;
   tags: string[];
-  href?: string;
+  href: string;
+  cta: string;
 };
 
-// Range first: four environments across the whole stack. Depth is revealed on
-// click. Deep-link routes to /work/[slug] are wired in Phase B.
+// Range first: four environments across the whole stack. Each links to depth —
+// a case study for the three shipped products, or the teaching section.
 const environments: Environment[] = [
   {
-    name: "Banu Beauty",
+    name: "Banu Beauty / La Vianue",
     environment: "Web · full-stack e-commerce",
     summary:
-      "A storefront built concept to deployed — product, checkout, and a payment-aware preorder flow. The live, clickable anchor.",
-    tags: ["Next.js", "Stripe", "PostgreSQL"]
+      "A storefront built concept to deployed — product, checkout, and orders on a real data layer. The live, clickable anchor.",
+    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    href: "/work/banu",
+    cta: "Read case study"
   },
   {
     name: "ZEVA referral engine",
@@ -25,15 +29,17 @@ const environments: Environment[] = [
     summary:
       "One referral & promotions system spanning Django, Angular, and Flutter — one feature, three tiers of the stack, shipped.",
     tags: ["Django", "Angular", "Flutter"],
-    href: "#flagship"
+    href: "/work/zeva-referral",
+    cta: "Read case study"
   },
   {
     name: "HAIL Admin",
     environment: "Ownership · operations console",
     summary:
-      "Sole frontend engineer: a blank repository to a production operations console in about two and a half months.",
+      "Sole frontend engineer: a blank repository to a production operations console on a reusable foundation.",
     tags: ["Angular", "Admin systems", "Telemetry"],
-    href: "#hail"
+    href: "/work/hail",
+    cta: "Read case study"
   },
   {
     name: "Teaching",
@@ -41,7 +47,8 @@ const environments: Environment[] = [
     summary:
       "Nearly four years as a University of Toronto TA — reading unfamiliar code, debugging, and explaining until it clicks.",
     tags: ["Debugging", "Mentorship", "Communication"],
-    href: "#teaching"
+    href: "#teaching",
+    cta: "Jump to teaching"
   }
 ];
 
@@ -69,14 +76,12 @@ export function WorkRail() {
                 <Chip key={tag}>{tag}</Chip>
               ))}
             </div>
-            {item.href ? (
-              <a
-                href={item.href}
-                className="mt-6 inline-flex items-center gap-2 font-mono text-sm font-medium text-moss transition hover:gap-3 focus-ring"
-              >
-                View <span aria-hidden="true">→</span>
-              </a>
-            ) : null}
+            <Link
+              href={item.href}
+              className="mt-6 inline-flex items-center gap-2 font-mono text-sm font-medium text-moss transition hover:gap-3 focus-ring"
+            >
+              {item.cta} <span aria-hidden="true">→</span>
+            </Link>
           </article>
         ))}
       </div>

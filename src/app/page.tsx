@@ -9,7 +9,8 @@ import { Teaching } from "@/components/sections/Teaching";
 import { WorkRail } from "@/components/sections/WorkRail";
 import { Container } from "@/components/ui/Container";
 import { Nav } from "@/components/ui/Nav";
-import { profile } from "@/data/profile";
+import { experience } from "@/data/experience";
+import { site } from "@/data/site";
 
 export default function Home() {
   return (
@@ -19,24 +20,24 @@ export default function Home() {
       </a>
       <Fallback2D />
       <Container className="flex min-h-screen flex-col pb-16 pt-4">
-        <Nav name={profile.name} navItems={profile.navItems} />
+        <Nav name={site.name} navItems={site.nav} />
         <main id="content" className="flex flex-col gap-24 sm:gap-32">
           <Hero />
           <WorkRail />
           <FlagshipZeva />
           <HailOwnership />
-          <SkillsRootMap groups={profile.skillGroups} />
+          <SkillsRootMap />
           <Teaching />
-          <ExperienceTimeline items={profile.experience} />
+          <ExperienceTimeline items={experience} />
           <Contact
-            heading="Have something thoughtful to build?"
-            body={profile.contact.body}
-            email={profile.email}
-            linkedin={profile.linkedin}
-            tags={profile.contact.tags}
+            heading={site.contact.heading}
+            body={site.contact.body}
+            email={site.email}
+            linkedin={site.linkedin}
+            tags={site.contact.tags}
           />
         </main>
-        <SiteFooter domain={profile.domain} />
+        <SiteFooter domain={site.domain} />
       </Container>
     </>
   );

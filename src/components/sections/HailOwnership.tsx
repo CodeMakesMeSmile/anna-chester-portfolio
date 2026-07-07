@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Chip } from "@/components/ui/Chip";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -26,7 +27,7 @@ export function HailOwnership() {
       <SectionHeading
         eyebrow="Ownership"
         title="Blank repository to production operations console."
-        description="As sole frontend engineer on HAIL Admin, I took an operations console from an empty repository to production in about two and a half months — the end-to-end ownership that range alone doesn't show."
+        description="As sole frontend engineer on HAIL Admin, I took an operations console from an empty repository to production on a reusable foundation — the end-to-end ownership that range alone doesn't show."
       />
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {highlights.map((item) => (
@@ -36,10 +37,18 @@ export function HailOwnership() {
           </article>
         ))}
       </div>
-      <div className="mt-6 flex flex-wrap gap-2.5">
-        {["Angular", "TypeScript", "Admin systems", "Real-time telemetry", "Theming"].map((tag) => (
-          <Chip key={tag}>{tag}</Chip>
-        ))}
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex flex-wrap gap-2.5">
+          {["Angular", "TypeScript", "Admin systems", "Real-time telemetry", "Theming"].map((tag) => (
+            <Chip key={tag}>{tag}</Chip>
+          ))}
+        </div>
+        <Link
+          href="/work/hail"
+          className="inline-flex items-center gap-2 whitespace-nowrap font-mono text-sm font-medium text-moss transition hover:gap-3 focus-ring"
+        >
+          Read the case study <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </section>
   );
