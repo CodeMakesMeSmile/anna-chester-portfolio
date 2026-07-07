@@ -21,6 +21,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/anna-chester?originalSubdomain=ca",
   github: "https://github.com/CodeMakesMeSmile",
   resume: "/Anna_Chester_Resume.pdf",
+  liveDemo: { url: "https://banubeauty.ca", label: "banubeauty.ca" },
   nav: [
     { label: "Work", href: "#work" },
     { label: "Skills", href: "#skills" },
