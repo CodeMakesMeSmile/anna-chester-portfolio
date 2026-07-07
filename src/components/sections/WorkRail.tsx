@@ -15,7 +15,7 @@ type Environment = {
 // a case study for the three shipped products, or the teaching section.
 const environments: Environment[] = [
   {
-    name: "Banu Beauty / La Vianue",
+    name: "Banu Beauty",
     environment: "Web · full-stack e-commerce",
     summary:
       "A storefront built concept to deployed — product, checkout, and orders on a real data layer. The live, clickable anchor.",

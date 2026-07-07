@@ -8,7 +8,7 @@ import { cn } from "@/lib/cn";
 
 // Where each evidence target lives, so a connection can link through to depth.
 const targetHref: Record<string, string> = {
-  "Banu Beauty / La Vianue": "/work/banu",
+  "Banu Beauty": "/work/banu",
   "ZEVA Global": "/work/zeva-referral",
   "HAIL Admin": "/work/hail",
   "University of Toronto": "#teaching",

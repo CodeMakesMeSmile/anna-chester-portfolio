@@ -15,7 +15,7 @@ export type SkillEvidence = {
 /**
  * Skills mapped to the real systems that prove them — the data behind the
  * interactive root-map. Every connection names a public-safe project or
- * environment (ZEVA Global, Banu / La Vianue, HAIL Admin, UofT, DBRS).
+ * environment (ZEVA Global, Banu Beauty, HAIL Admin, UofT, DBRS).
  */
 export const skillEvidence: SkillEvidence[] = [
   {
@@ -25,7 +25,7 @@ export const skillEvidence: SkillEvidence[] = [
       "A product that lasts needs a data layer that can carry real behavior after launch.",
     connections: [
       {
-        target: "Banu Beauty / La Vianue",
+        target: "Banu Beauty",
         label: "Product and order data",
         evidence: "Used Neon-hosted PostgreSQL for the commerce layer and order handling."
       },
@@ -43,7 +43,7 @@ export const skillEvidence: SkillEvidence[] = [
       "Transactions are trust points. They need to be clear for users and reliable in the system.",
     connections: [
       {
-        target: "Banu Beauty / La Vianue",
+        target: "Banu Beauty",
         label: "Stripe checkout",
         evidence: "Implemented the live payment path for customer purchases."
       },
@@ -91,7 +91,7 @@ export const skillEvidence: SkillEvidence[] = [
     whyItMatters: "A feature is not finished when it looks good locally. It has to survive release.",
     connections: [
       {
-        target: "Banu Beauty / La Vianue",
+        target: "Banu Beauty",
         label: "Commerce release",
         evidence: "Owned deployment for the commerce build."
       },

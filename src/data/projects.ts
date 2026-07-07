@@ -5,7 +5,7 @@
  * structured (facts, flow, skills) with only a short prose lede, so a schema is
  * cleaner and fully type-checked. All copy is public-safe — employer work is
  * framed under the ZEVA / HAIL product names with no internal metrics, repo
- * names, or paths. Only the personally-owned Banu / La Vianue build links out.
+ * names, or paths. Only the personally-owned Banu Beauty build links out.
  */
 
 export type CaseStudyFact = { label: string; value: string };
@@ -112,7 +112,7 @@ export const caseStudies: CaseStudy[] = [
     result: "Delivered a production operations console now used to run live fleet operations.",
     stack: ["Angular", "TypeScript", "Operational UX", "Real-time telemetry", "Theming"],
     facts: [
-      { label: "Timeline", value: "~1.5 months" },
+      { label: "Timeline", value: "~2.5 months" },
       { label: "Ownership", value: "Sole frontend" },
       { label: "Core flows", value: "Vehicles, reservations, users" },
       { label: "Outcome", value: "Live operations" }
@@ -136,7 +136,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "banu",
-    title: "Banu Beauty / La Vianue",
+    title: "Banu Beauty",
     kicker: "Live · end-to-end commerce",
     role: "Solo full-stack developer",
     summary:
@@ -174,7 +174,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Data modeling", evidence: "Designed the relational layer for catalog and order behavior." },
       { name: "Release readiness", evidence: "Handled deployment and production setup, not just implementation." }
     ],
-    links: [{ label: "Live site", href: "https://lavianue.annachester.dev" }]
+    links: [{ label: "Live site", href: "https://banubeauty.ca" }]
   },
   {
     slug: "zeva-vision",
