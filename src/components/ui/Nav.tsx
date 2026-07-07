@@ -1,28 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { NavItem } from "@/data/profile";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import type { NavItem } from "@/data/site";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
-type SiteHeaderProps = {
+type NavProps = {
   name: string;
   navItems: NavItem[];
 };
 
-export function SiteHeader({ name, navItems }: SiteHeaderProps) {
+export function Nav({ name, navItems }: NavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setMenuOpen(false);
-      }
+      if (event.key === "Escape") setMenuOpen(false);
     };
 
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setMenuOpen(false);
-      }
+      if (window.innerWidth >= 768) setMenuOpen(false);
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -35,13 +31,13 @@ export function SiteHeader({ name, navItems }: SiteHeaderProps) {
   }, []);
 
   return (
-    <header className="sticky top-4 z-30 mb-10 rounded-[1.75rem] border border-line/80 bg-surface/80 px-3 py-3 shadow-soft backdrop-blur-xl sm:px-5">
+    <header className="sticky top-4 z-30 mb-16 rounded-[1.75rem] border border-line/80 bg-surface/80 px-3 py-3 shadow-soft backdrop-blur-xl sm:px-5">
       <nav aria-label="Main navigation">
         <div className="flex items-center justify-between gap-3">
           <a
             href="#top"
             className="flex min-h-11 items-center gap-3 rounded-full pr-3 text-text focus-ring"
-            aria-label={`${name} home`}
+            aria-label={`${name}, back to top`}
             onClick={() => setMenuOpen(false)}
           >
             <span className="grid h-11 w-11 place-items-center rounded-full bg-text font-display text-sm font-semibold text-bg shadow-sm">
@@ -57,6 +53,7 @@ export function SiteHeader({ name, navItems }: SiteHeaderProps) {
                 <NavLink key={item.href} href={item.href} label={item.label} />
               ))}
             </div>
+            {/* Live Toronto time + weather readout mounts here in Phase C. */}
             <ThemeToggle />
             <button
               type="button"
