@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { Logo } from "@/components/ui/Logo";
 
 // Twilight-greenhouse social card. This is what recruiters see when the link is
 // shared on LinkedIn, Slack, or email. Runs on the edge (Vercel's recommended
@@ -24,23 +25,8 @@ export default function OpengraphImage() {
           fontFamily: "sans-serif"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "22px" }}>
-          <div
-            style={{
-              display: "flex",
-              height: 64,
-              width: 64,
-              borderRadius: 18,
-              background: "#eef0e8",
-              color: "#0b1410",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 28,
-              fontWeight: 700
-            }}
-          >
-            AC
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+          <Logo width={64} height={53} />
           <div
             style={{
               display: "flex",

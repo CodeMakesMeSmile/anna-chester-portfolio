@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { NavItem } from "@/data/site";
+import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 type NavProps = {
@@ -40,8 +41,8 @@ export function Nav({ name, navItems }: NavProps) {
             aria-label={`${name}, back to top`}
             onClick={() => setMenuOpen(false)}
           >
-            <span className="grid h-11 w-11 place-items-center rounded-full bg-text font-display text-sm font-semibold text-bg shadow-sm">
-              AC
+            <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-[#0f1a15] shadow-sm">
+              <Logo className="h-6 w-auto" />
             </span>
             <span className="hidden font-display text-sm font-semibold tracking-tight sm:inline">
               {name}
