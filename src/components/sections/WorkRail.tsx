@@ -12,14 +12,14 @@ type Environment = {
   live?: string;
 };
 
-// Range first: four environments across the whole stack. Each links to depth —
-// a case study for the three shipped products, or the teaching section.
+// Range first: five environments across the whole stack. Each links to depth,
+// either a case study for the four shipped products or the teaching section.
 const environments: Environment[] = [
   {
     name: "Banu Beauty",
     environment: "Web · full-stack e-commerce",
     summary:
-      "A storefront built concept to deployed — product, checkout, and orders on a real data layer. The live, clickable anchor.",
+      "A storefront taken from concept to deployment, with product, checkout, and orders on a real data layer. Live and clickable.",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
     href: "/work/banu",
     cta: "Read case study",
@@ -29,7 +29,7 @@ const environments: Environment[] = [
     name: "ZEVA referral engine",
     environment: "Cross-platform · flagship",
     summary:
-      "One referral & promotions system spanning Django, Angular, and Flutter — one feature, three tiers of the stack, shipped.",
+      "One referral and promotions system spanning Django, Angular, and Flutter. One feature, three tiers of the stack, shipped.",
     tags: ["Django", "Angular", "Flutter"],
     href: "/work/zeva-referral",
     cta: "Read case study"
@@ -44,10 +44,20 @@ const environments: Environment[] = [
     cta: "Read case study"
   },
   {
+    name: "Prime Standard",
+    environment: "Live · legacy modernization",
+    summary:
+      "A live FrontAccounting/PHP site modernized in place: a design-system retrofit, an invoice generator, and hardened forms, all with no build step. A second live anchor you can click.",
+    tags: ["PHP", "Vanilla JS", "Security"],
+    href: "/work/prime-standard",
+    cta: "Read case study",
+    live: "https://primestandard.ca"
+  },
+  {
     name: "Teaching",
     environment: "Mentorship · 1,000+ students",
     summary:
-      "Nearly four years as a University of Toronto TA — reading unfamiliar code, debugging, and explaining until it clicks.",
+      "Nearly four years as a University of Toronto TA, reading unfamiliar code, debugging, and explaining until it clicks.",
     tags: ["Debugging", "Mentorship", "Communication"],
     href: "#teaching",
     cta: "Jump to teaching"
@@ -59,8 +69,8 @@ export function WorkRail() {
     <section id="work" className="scroll-mt-28">
       <SectionHeading
         eyebrow="Selected work"
-        title="Range across the whole stack — web, mobile, backend, and the teams around it."
-        description="Four environments that show the breadth first. The depth lives one click away."
+        title="Range across the whole stack: web, mobile, backend, and the teams around it."
+        description="Five environments that lead with breadth, two of them live and clickable. The depth is one click away."
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {environments.map((item) => (

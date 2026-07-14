@@ -1,6 +1,6 @@
 /**
- * Anna Chester brand mark (matches the favicon in app/icon.svg). Decorative —
- * the wrapping link carries the accessible name. Designed light-on-dark, so it
+ * Anna Chester brand mark (matches the favicon in app/icon.svg). It's decorative,
+ * so the wrapping link carries the accessible name. Designed light-on-dark, so it
  * sits inside a dark holder.
  */
 export function Logo({

@@ -7,7 +7,6 @@ type SectionHeadingProps = {
   className?: string;
 };
 
-/** Consistent section header: mono eyebrow, serif title, muted description. */
 export function SectionHeading({ eyebrow, title, description, className }: SectionHeadingProps) {
   return (
     <div className={cn("max-w-3xl", className)}>

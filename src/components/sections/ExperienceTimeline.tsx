@@ -8,7 +8,7 @@ export function ExperienceTimeline({ items }: { items: ExperienceItem[] }) {
       <SectionHeading
         eyebrow="Experience"
         title="Production systems, enterprise tools, and technical education."
-        description="The roles and ownership behind the range — from the current full-stack seat back through a co-op and four years of teaching."
+        description="The roles behind the range, from my current full-stack seat back through a co-op and four years of teaching."
       />
       <ol className="mt-8 space-y-4">
         {items.map((item) => (

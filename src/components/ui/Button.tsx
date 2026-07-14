@@ -17,7 +17,6 @@ type ButtonProps = {
   "aria-label"?: string;
 };
 
-/** Link styled as a button. External links open in a new, safely-`rel`'d tab. */
 export function Button({
   href,
   children,

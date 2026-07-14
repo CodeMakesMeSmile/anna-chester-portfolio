@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getCaseStudy } from "@/data/projects";
 
 export const runtime = "edge";
-export const alt = "Case study — Anna Chester";
+export const alt = "Case study · Anna Chester";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

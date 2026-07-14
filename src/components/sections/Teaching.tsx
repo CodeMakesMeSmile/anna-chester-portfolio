@@ -12,7 +12,7 @@ export function Teaching() {
       <SectionHeading
         eyebrow="Teaching"
         title="Nearly four years explaining code to 1,000+ students."
-        description="The teamwork multiplier: reading unfamiliar code, debugging under pressure, and explaining hard ideas simply — the same skills that make me useful on a team."
+        description="Reading unfamiliar code, debugging under pressure, and explaining hard ideas simply. These are the same skills that make me useful on a team."
       />
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {stats.map((stat) => (

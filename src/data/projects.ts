@@ -3,8 +3,8 @@
  *
  * Content is deliberately typed TS rather than MDX: each study is highly
  * structured (facts, flow, skills) with only a short prose lede, so a schema is
- * cleaner and fully type-checked. All copy is public-safe — employer work is
- * framed under the ZEVA / HAIL product names with no internal metrics, repo
+ * cleaner and fully type-checked. All copy is public-safe. Employer work is
+ * framed under the ZEVA and HAIL product names with no internal metrics, repo
  * names, or paths. Only the personally-owned Banu Beauty build links out.
  */
 
@@ -20,20 +20,16 @@ export type CaseStudy = {
   role: string;
   /** One-line summary used on cards and as the meta description. */
   summary: string;
-  /** Short first-person lede shown at the top of the case study. */
   intro: string;
   problem: string;
-  /** What Anna personally owned. */
   owned: string;
   hardParts: string[];
   result: string;
   stack: string[];
   facts: CaseStudyFact[];
-  /** The system-flow, tier by tier. */
   flow: CaseStudyFlowStep[];
   skills: CaseStudySkill[];
   links: CaseStudyLink[];
-  /** The flagship study, surfaced first. */
   featured?: boolean;
 };
 
@@ -44,11 +40,11 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Cross-platform · flagship",
     role: "Full-stack developer",
     summary:
-      "One referral & promotions system spanning Django, Angular, and Flutter — one feature, three tiers of the stack.",
+      "One referral and promotions system spanning Django, Angular, and Flutter. One feature, three tiers of the stack.",
     intro:
-      "I built one referral system that lives in three places at once — the Django backend that issues rewards, the Angular web flow that manages them, and the Flutter app that redeems them. It is the cleanest proof of range I have: a single feature that had to be right across the whole stack.",
+      "I built one referral system that lives in three places at once. The Django backend issues rewards, the Angular web flow manages them, and the Flutter app redeems them. It's the clearest example of my range: a single feature that had to be right across the whole stack.",
     problem:
-      "A referral and promotions program only works if every tier agrees. Rewards have to be issued on a cycle, acquisition has to survive an app install, and redemption has to be tamper-proof — across web and mobile at the same time.",
+      "A referral and promotions program only works if every tier agrees. Rewards have to be issued on a cycle, acquisition has to survive an app install, and redemption has to be tamper-proof, all across web and mobile at once.",
     owned:
       "Designed and shipped the feature end to end: cycle-based reward issuance in Django, referral and promotion management in Angular, and deep-link acquisition plus in-app redemption in Flutter, all over one shared PostgreSQL model.",
     hardParts: [
@@ -57,7 +53,7 @@ export const caseStudies: CaseStudy[] = [
       "Signing promo redemption so it can't be replayed or forged."
     ],
     result:
-      "Shipped a referral & promotions engine that behaves identically across web and mobile, issuing and redeeming rewards on a live product.",
+      "Shipped a referral and promotions engine that behaves identically across web and mobile, issuing and redeeming rewards on a live product.",
     stack: ["Django", "Angular", "Flutter", "PostgreSQL", "Deep links", "Signed redemption"],
     facts: [
       { label: "Platforms", value: "Web + mobile" },
@@ -99,9 +95,9 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Sole frontend engineer: a blank repository to a production operations console on a reusable foundation.",
     intro:
-      "I took an operations console from an empty repository to production as the sole frontend engineer. It is the ownership story that range alone doesn't tell — product, design, and engineering decisions all ran through me.",
+      "I took an operations console from an empty repository to production as the sole frontend engineer. Product, design, and engineering decisions all ran through me.",
     problem:
-      "Fleet operators needed a real console to run daily operations — vehicles, reservations, users, and the actions around them — not a placeholder dashboard.",
+      "Fleet operators needed a working console to run daily operations: vehicles, reservations, users, and the actions around each. Something solid enough to run the business on from day one.",
     owned:
       "Built the console frontend from a blank repo on a reusable foundation, working closely with product managers and designers and carrying the frontend decisions across departments.",
     hardParts: [
@@ -142,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "A live commerce platform built from product data to checkout, orders, and production deployment.",
     intro:
-      "Banu Beauty needed a real commerce system, not just a polished storefront. I built the customer flow, the Stripe payment path, the PostgreSQL data layer, and the deployment as one connected product — and it's live.",
+      "Banu Beauty needed a full commerce system behind the storefront. I built the customer flow, the Stripe payment path, the PostgreSQL data layer, and the deployment as one connected product. It's live today.",
     problem:
       "The store had to feel trustworthy to customers while behaving like a complete system behind the scenes: product data, cart, checkout, orders, and launch ownership.",
     owned:
@@ -172,9 +168,91 @@ export const caseStudies: CaseStudy[] = [
     skills: [
       { name: "Full-stack development", evidence: "Owned the customer path and the system underneath it." },
       { name: "Data modeling", evidence: "Designed the relational layer for catalog and order behavior." },
-      { name: "Release readiness", evidence: "Handled deployment and production setup, not just implementation." }
+      { name: "Release readiness", evidence: "Handled deployment and production setup, carrying the build past implementation into release." }
     ],
     links: [{ label: "Live site", href: "https://banubeauty.ca" }]
+  },
+  {
+    slug: "prime-standard",
+    title: "Prime Standard legacy modernization",
+    kicker: "Live · legacy modernization",
+    role: "Full-stack developer",
+    summary:
+      "A live FrontAccounting/PHP site modernized in place: a design-system retrofit, an invoice generator, and a hardened form layer, with no build step and nothing broken.",
+    intro:
+      "Most real engineering happens on top of something that already runs. This was a live FrontAccounting/PHP site: table-based markup, vendored webmail and calendar apps, no bundler, and no chance of a rewrite. I modernized the look, added a real feature, and hardened the forms, all without breaking the routes and email flows people depended on every day.",
+    problem:
+      "The site was a production legacy system: no build pipeline, legacy inline scripts, and forms, routes, and email flows that real users relied on. I couldn't drop in React, add a bundler, or rewrite the data layer. The work had to modernize the UI, add real features, and close security gaps in place, without breaking anything already running.",
+    owned:
+      "Three connected bodies of work: a shared design system and progressive-enhancement retrofit across every public page, an end-to-end invoice generator with a server-authoritative tax engine and a from-scratch PDF writer, and a hardened form layer, capped by an IFTA refactor that collapsed two 1,700-line processors into thin orchestrators behind one shared library.",
+    hardParts: [
+      "Enhancing a table-based site that had no bundler. The base is semantic HTML that works without JS, with a themed layout rebuilt on top.",
+      "Getting money math right: integer-only currency end to end, with the server recomputing every total so the client is never trusted.",
+      "Hardening live forms with CSRF, honeypots, output escaping, and injection-safe mail, all without changing the field names and POST targets people depended on."
+    ],
+    result:
+      "Modernized a live legacy system in place: a coherent themed UI with full dark/light parity, a working invoice tool with reproducible, date-versioned tax math, and a hardened form layer, all dropping into the existing site with a single script tag and no build step.",
+    stack: [
+      "PHP",
+      "Vanilla JS (ES5)",
+      "Progressive enhancement",
+      "PDF generation",
+      "Microsoft Graph API",
+      "Security hardening"
+    ],
+    facts: [
+      { label: "System", value: "Legacy PHP · no bundler" },
+      { label: "Approach", value: "Progressive enhancement" },
+      { label: "Feature", value: "Invoice generator + PDF" },
+      { label: "IFTA refactor", value: "2×1,700 → 31 lines" }
+    ],
+    flow: [
+      {
+        label: "Semantic HTML",
+        detail: "Static, accessible markup that still works with JavaScript disabled."
+      },
+      {
+        label: "Progressive enhancement",
+        detail:
+          "A dependency-free ES5 script rebuilds the header, nav, footer, and theme toggle on top, over a centralized color-token layer with dark/light parity that coexists with the legacy stylesheet."
+      },
+      {
+        label: "Invoice client",
+        detail:
+          "A vanilla-JS UI computes live totals purely for feel. Quantities, prices, and provinces are all it ever posts."
+      },
+      {
+        label: "Server tax engine",
+        detail:
+          "PHP recomputes every subtotal and tax line from the raw payload with integer-only money math and date-versioned Canadian rates, so historical invoices stay reproducible."
+      },
+      {
+        label: "PDF + email",
+        detail: "A from-scratch PDF-1.4 writer renders the invoice, and Microsoft Graph delivers it."
+      },
+      {
+        label: "Hardened forms",
+        detail:
+          "Timing-safe CSRF, a honeypot, allowlist validation, and injection-safe mail, with the original field names and POST targets preserved. Two 1,700-line IFTA processors collapsed to 31 lines each behind a shared library."
+      }
+    ],
+    skills: [
+      {
+        name: "Working in legacy systems",
+        evidence: "Modernized a live PHP site in place, with no rewrite, no bundler, and no broken flows."
+      },
+      {
+        name: "Feature ownership",
+        evidence:
+          "Built an invoice generator end to end: server-authoritative, integer-only tax math and a from-scratch PDF writer."
+      },
+      {
+        name: "Security & refactoring",
+        evidence:
+          "Hardened live forms and collapsed two 1,700-line IFTA processors into thin orchestrators behind one shared library."
+      }
+    ],
+    links: [{ label: "Live site", href: "https://primestandard.ca" }]
   },
   {
     slug: "zeva-vision",
@@ -182,9 +260,9 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Mobile · on-device ML",
     role: "Mobile developer",
     summary:
-      "Real-time, on-device computer vision on mobile — face detection for identity verification and object detection for photo validation.",
+      "Real-time, on-device computer vision on mobile: face detection for identity verification, object detection for photo validation.",
     intro:
-      "Not many full-stack developers ship computer vision. On mobile, I used Google ML Kit for real-time face detection to support identity verification, and object detection plus image labeling to validate vehicle photos before upload — all on-device, with a graceful fallback when ML isn't available.",
+      "Not many full-stack developers ship computer vision. On mobile, I used Google ML Kit for real-time face detection to support identity verification, and object detection plus image labeling to validate vehicle photos before upload. Everything runs on-device, with a graceful fallback for when ML isn't available.",
     problem:
       "Identity and photo checks had to happen in real time, on the device, without sending raw images to a server for every frame.",
     owned:

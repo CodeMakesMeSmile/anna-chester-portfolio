@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn";
 
-/** Small monospace pill used for stack tags and metadata. */
 export function Chip({
   children,
   className

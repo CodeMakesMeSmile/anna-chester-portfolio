@@ -16,7 +16,7 @@ const targetHref: Record<string, string> = {
 };
 
 /**
- * Interactive root-map: skills are the roots; selecting one traces it to the
+ * Interactive root-map: skills are the roots, and selecting one traces it to the
  * real systems that prove it. Keyboard-accessible and light on motion.
  */
 export function SkillsRootMap() {
@@ -27,7 +27,7 @@ export function SkillsRootMap() {
     <section id="skills" className="scroll-mt-28">
       <SectionHeading
         eyebrow="Skills in context"
-        title="I don't just know these tools — I've used them inside real systems."
+        title="I've used every one of these tools inside real, shipped systems."
         description="Select a skill to trace it to the production work behind it. Each connection links to the project."
       />
       <div className="section-shell mt-8 p-6 sm:p-8">

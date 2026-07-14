@@ -1,5 +1,4 @@
 export type SkillConnection = {
-  /** The project or environment where the skill was used. */
   target: string;
   label: string;
   evidence: string;
@@ -13,8 +12,8 @@ export type SkillEvidence = {
 };
 
 /**
- * Skills mapped to the real systems that prove them — the data behind the
- * interactive root-map. Every connection names a public-safe project or
+ * Skills mapped to the real systems that prove them. This is the data behind
+ * the interactive root-map. Every connection names a public-safe project or
  * environment (ZEVA Global, Banu Beauty, HAIL Admin, UofT, DBRS).
  */
 export const skillEvidence: SkillEvidence[] = [
