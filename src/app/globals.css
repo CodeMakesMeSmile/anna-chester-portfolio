@@ -126,3 +126,10 @@ a {
     background-position: 24px 320px, -18px 240px, 12px 200px;
   }
 }
+
+/* Ambient dust drifting slowly upward through the light. */
+@keyframes atmos-dust {
+  to {
+    background-position: 30px -220px, -20px -180px, 25px -260px, -15px -160px;
+  }
+}

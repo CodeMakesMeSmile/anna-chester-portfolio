@@ -1,13 +1,14 @@
 "use client";
 
-import { getPreset } from "@/lib/weather";
+import { getPreset, type Theme } from "@/lib/weather";
 import { useAtmosphere } from "@/store/atmosphere";
 
 /**
- * The 2D atmosphere: a theme-aware greenhouse backdrop that reacts to the active
- * weather (glow tint + rain/snow). It's the required baseline that renders before
- * (and instead of) the WebGL scene, and it's decorative and hidden from a11y.
- * Precipitation pauses under reduced motion.
+ * The 2D atmosphere: a theme-aware greenhouse that reads as a space even on a
+ * clear day (light through the glass, panes, dust, vignette) and reacts to the
+ * active weather (glow tint + rain/snow). It's the required baseline that renders
+ * before the WebGL scene, is decorative/`aria-hidden`, and pauses precipitation
+ * and dust under reduced motion.
  */
 export function Fallback2D() {
   const weather = useAtmosphere((state) => state.weather);
@@ -16,31 +17,34 @@ export function Fallback2D() {
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      {/* Base wash — theme colors via CSS variables. */}
+      {/* Base tint. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(1200px circle at 50% -8%, rgb(var(--color-amber) / 0.08), transparent 60%), radial-gradient(900px circle at 12% 8%, rgb(var(--color-moss) / 0.1), transparent 55%)"
+            "radial-gradient(1000px circle at 14% 6%, rgb(var(--color-moss) / 0.12), transparent 55%)"
         }}
       />
 
-      {/* Light through the glass — tinted by the active weather. */}
+      {/* Light pouring through the glass roof — tinted by the active weather. */}
       <div
         className="absolute inset-0 transition-[background] duration-1000"
         style={{
-          background: `radial-gradient(1000px circle at 50% -10%, rgb(${preset.glow} / 0.16), transparent 62%)`
+          background: `radial-gradient(1200px 760px at 50% -14%, rgb(${preset.glow} / 0.3), transparent 62%)`
         }}
       />
 
-      {/* Faint greenhouse mullions. */}
+      {/* Greenhouse panes: vertical mullions and horizontal glazing bars. */}
       <div
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0"
         style={{
-          backgroundImage: "linear-gradient(90deg, rgb(var(--color-grid) / 0.06) 1px, transparent 1px)",
-          backgroundSize: "7.5rem 100%"
+          backgroundImage:
+            "linear-gradient(90deg, rgb(var(--color-grid) / 0.09) 1px, transparent 1px), linear-gradient(0deg, rgb(var(--color-grid) / 0.07) 1px, transparent 1px)",
+          backgroundSize: "8rem 100%, 100% 8rem"
         }}
       />
+
+      <Dust theme={theme} />
 
       {preset.precip === "rain" ? (
         <Rain
@@ -55,15 +59,39 @@ export function Fallback2D() {
         />
       ) : null}
 
-      {/* Foliage floor glow. */}
+      {/* Foliage glow along the floor. */}
       <div
-        className="absolute inset-x-0 bottom-0 h-1/3"
+        className="absolute inset-x-0 bottom-0 h-2/5"
         style={{
           background:
-            "radial-gradient(80% 120% at 50% 120%, rgb(var(--color-moss) / 0.14), transparent 70%)"
+            "radial-gradient(80% 120% at 50% 125%, rgb(var(--color-moss) / 0.18), transparent 70%)"
+        }}
+      />
+
+      {/* Cinematic vignette to frame the content. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(125% 125% at 50% 32%, transparent 46%, rgb(var(--color-shadow) / 0.24) 100%)"
         }}
       />
     </div>
+  );
+}
+
+function Dust({ theme }: { theme: Theme }) {
+  const tint = theme === "dark" ? "231 207 156" : "120 140 108";
+  return (
+    <div
+      className="absolute inset-0 motion-reduce:hidden"
+      style={{
+        opacity: 0.55,
+        backgroundImage: `radial-gradient(1.6px 1.6px at 15% 30%, rgb(${tint} / 0.55), transparent 60%), radial-gradient(1.1px 1.1px at 60% 18%, rgb(${tint} / 0.45), transparent 60%), radial-gradient(1.6px 1.6px at 82% 68%, rgb(${tint} / 0.5), transparent 60%), radial-gradient(1.1px 1.1px at 35% 82%, rgb(${tint} / 0.4), transparent 60%)`,
+        backgroundSize: "600px 600px, 500px 500px, 720px 720px, 460px 460px",
+        animation: "atmos-dust 26s linear infinite"
+      }}
+    />
   );
 }
 
