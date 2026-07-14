@@ -1,4 +1,5 @@
-import { Fallback2D } from "@/components/atmosphere/Fallback2D";
+import { Atmosphere } from "@/components/atmosphere/Atmosphere";
+import { WeatherControls } from "@/components/atmosphere/WeatherControls";
 import { Contact } from "@/components/sections/Contact";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { FlagshipZeva } from "@/components/sections/FlagshipZeva";
@@ -18,7 +19,7 @@ export default function Home() {
       <a href="#content" className="skip-link">
         Skip to content
       </a>
-      <Fallback2D />
+      <Atmosphere />
       <Container className="flex min-h-screen flex-col pb-16 pt-4">
         <Nav name={site.name} navItems={site.nav} />
         <main id="content" className="flex flex-col gap-24 sm:gap-32">
@@ -41,6 +42,7 @@ export default function Home() {
         </main>
         <SiteFooter domain={site.domain} />
       </Container>
+      <WeatherControls />
     </>
   );
 }

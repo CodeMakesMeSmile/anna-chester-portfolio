@@ -110,3 +110,19 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Decorative precipitation for the 2D atmosphere (paused under reduced motion). */
+@keyframes atmos-rain {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -60px 640px;
+  }
+}
+
+@keyframes atmos-snow {
+  to {
+    background-position: 24px 320px, -18px 240px, 12px 200px;
+  }
+}

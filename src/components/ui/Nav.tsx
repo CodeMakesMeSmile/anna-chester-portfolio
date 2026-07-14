@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { NavItem } from "@/data/site";
+import { Readout } from "@/components/atmosphere/Readout";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
@@ -54,7 +55,7 @@ export function Nav({ name, navItems }: NavProps) {
                 <NavLink key={item.href} href={item.href} label={item.label} />
               ))}
             </div>
-            {/* Live Toronto time + weather readout mounts here in Phase C. */}
+            <Readout />
             <ThemeToggle />
             <button
               type="button"
