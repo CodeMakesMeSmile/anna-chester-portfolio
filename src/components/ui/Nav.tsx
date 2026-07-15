@@ -50,7 +50,7 @@ export function Nav({ name, navItems }: NavProps) {
             </span>
           </a>
           <div className="flex items-center gap-2">
-            <div className="hidden items-center gap-1 rounded-full border border-line/70 bg-surfaceStrong/70 p-1 md:flex">
+            <div className="hidden h-11 items-center gap-1 rounded-full border border-line/70 bg-surfaceStrong/70 p-1 md:flex">
               {navItems.map((item) => (
                 <NavLink key={item.href} href={item.href} label={item.label} />
               ))}

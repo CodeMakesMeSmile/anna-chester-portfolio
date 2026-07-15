@@ -28,7 +28,7 @@ export function Readout() {
   if (!time) return null;
 
   return (
-    <div className="hidden items-center gap-2 rounded-full border border-line/70 bg-surfaceStrong/60 px-3 py-1.5 font-mono text-xs text-text/75 lg:inline-flex">
+    <div className="hidden h-11 items-center gap-2 rounded-full border border-line/70 bg-surfaceStrong/60 px-4 font-mono text-xs text-text/75 lg:inline-flex">
       <span className="h-1.5 w-1.5 rounded-full bg-moss" aria-hidden="true" />
       <span>Toronto {time}</span>
       <span className="text-muted" aria-hidden="true">
