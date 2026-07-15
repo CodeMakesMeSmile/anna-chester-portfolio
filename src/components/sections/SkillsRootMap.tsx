@@ -28,7 +28,7 @@ export function SkillsRootMap() {
       <SectionHeading
         eyebrow="Skills in context"
         title="I've used every one of these tools inside real, shipped systems."
-        description="Select a skill to trace it to the production work behind it. Each connection links to the project."
+        description="Select a skill to trace it to the production work behind it."
       />
       <div className="section-shell mt-8 p-6 sm:p-8">
         <div className="flex flex-wrap gap-2.5" role="group" aria-label="Skills">

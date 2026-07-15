@@ -70,7 +70,7 @@ export function WorkRail() {
       <SectionHeading
         eyebrow="Selected work"
         title="Range across the whole stack: web, mobile, backend, and the teams around it."
-        description="Five environments that lead with breadth, two of them live and clickable. The depth is one click away."
+        description="Five environments that lead with breadth, two of them live and clickable."
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {environments.map((item) => (

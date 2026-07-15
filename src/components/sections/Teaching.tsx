@@ -11,7 +11,7 @@ export function Teaching() {
     <section id="teaching" className="scroll-mt-28">
       <SectionHeading
         eyebrow="Teaching"
-        title="Nearly four years explaining code to 1,000+ students."
+        title="Nearly four years teaching computer science to 1,000+ students."
         description="Reading unfamiliar code, debugging under pressure, and explaining hard ideas simply. These are the same skills that make me useful on a team."
       />
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
