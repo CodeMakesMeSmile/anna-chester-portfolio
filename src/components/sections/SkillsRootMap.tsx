@@ -17,6 +17,7 @@ const targetHref: Record<string, string> = {
 
 /**
  * Interactive root-map: skills are the roots, and selecting one traces it to the
+ * Interactive root-map: skills are the roots, and selecting one traces it to the
  * real systems that prove it. Keyboard-accessible and light on motion.
  */
 export function SkillsRootMap() {

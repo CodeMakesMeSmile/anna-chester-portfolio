@@ -54,9 +54,20 @@ const environments: Environment[] = [
     live: "https://primestandard.ca"
   },
   {
+    name: "Prime Standard",
+    environment: "Live · legacy modernization",
+    summary:
+      "A live FrontAccounting/PHP site modernized in place: a design-system retrofit, an invoice generator, and hardened forms, all with no build step. A second live anchor you can click.",
+    tags: ["PHP", "Vanilla JS", "Security"],
+    href: "/work/prime-standard",
+    cta: "Read case study",
+    live: "https://primestandard.ca"
+  },
+  {
     name: "Teaching",
     environment: "Mentorship · 1,000+ students",
     summary:
+      "Nearly four years as a University of Toronto TA, reading unfamiliar code, debugging, and explaining until it clicks.",
       "Nearly four years as a University of Toronto TA, reading unfamiliar code, debugging, and explaining until it clicks.",
     tags: ["Debugging", "Mentorship", "Communication"],
     href: "#teaching",
@@ -69,8 +80,8 @@ export function WorkRail() {
     <section id="work" className="scroll-mt-28">
       <SectionHeading
         eyebrow="Selected work"
-        title="Range across the whole stack: web, mobile, backend, and the teams around it."
-        description="Five environments that lead with breadth, two of them live and clickable."
+        title="Range across the whole stack — web, mobile, backend, and the teams around it."
+        description="Four environments that show the breadth first. The depth lives one click away."
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {environments.map((item) => (
