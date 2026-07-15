@@ -33,7 +33,7 @@ export function Nav({ name, navItems }: NavProps) {
   }, []);
 
   return (
-    <header className="sticky top-4 z-30 mb-16 rounded-[1.75rem] border border-line/80 bg-surface/80 px-3 py-3 shadow-soft backdrop-blur-xl sm:px-5">
+    <header className="sticky top-4 z-30 mb-16 -mx-[13px] rounded-[1.75rem] border border-line/80 bg-surface/80 px-3 py-3 shadow-soft backdrop-blur-xl sm:-mx-[21px] sm:px-5">
       <nav aria-label="Main navigation">
         <div className="flex items-center justify-between gap-4 md:justify-start">
           <a
