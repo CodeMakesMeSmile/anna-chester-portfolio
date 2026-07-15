@@ -34,16 +34,6 @@ export function Fallback2D() {
         }}
       />
 
-      {/* Greenhouse panes: vertical mullions and horizontal glazing bars. */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, rgb(var(--color-grid) / 0.09) 1px, transparent 1px), linear-gradient(0deg, rgb(var(--color-grid) / 0.07) 1px, transparent 1px)",
-          backgroundSize: "8rem 100%, 100% 8rem"
-        }}
-      />
-
       <Dust theme={theme} />
 
       {preset.precip === "rain" ? (
