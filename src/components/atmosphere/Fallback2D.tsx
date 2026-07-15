@@ -100,10 +100,10 @@ function Rain({ intensity, color }: { intensity: number; color: string }) {
     <div
       className="absolute inset-0 motion-reduce:hidden"
       style={{
-        opacity: 0.55 + intensity * 0.4,
-        backgroundImage: `repeating-linear-gradient(100deg, rgb(${color} / 0) 0px, rgb(${color} / 0) 12px, rgb(${color} / 0.65) 14px, rgb(${color} / 0) 16px)`,
-        backgroundSize: "120px 640px",
-        animation: "atmos-rain 0.55s linear infinite"
+        opacity: 0.14 + intensity * 0.18,
+        backgroundImage: `repeating-linear-gradient(95deg, rgb(${color} / 0) 0px, rgb(${color} / 0) 26px, rgb(${color} / 0.32) 27px, rgb(${color} / 0) 29px)`,
+        backgroundSize: "100% 700px",
+        animation: "atmos-rain 0.8s linear infinite"
       }}
     />
   );
@@ -114,10 +114,10 @@ function Snow({ intensity, color }: { intensity: number; color: string }) {
     <div
       className="absolute inset-0 motion-reduce:hidden"
       style={{
-        opacity: 0.6 + intensity * 0.35,
-        backgroundImage: `radial-gradient(3px 3px at 25% 15%, rgb(${color} / 0.95), transparent 55%), radial-gradient(2.4px 2.4px at 70% 55%, rgb(${color} / 0.85), transparent 55%), radial-gradient(2px 2px at 45% 80%, rgb(${color} / 0.75), transparent 55%)`,
+        opacity: 0.4 + intensity * 0.22,
+        backgroundImage: `radial-gradient(2.4px 2.4px at 25% 15%, rgb(${color} / 0.85), transparent 55%), radial-gradient(1.8px 1.8px at 70% 55%, rgb(${color} / 0.72), transparent 55%), radial-gradient(1.5px 1.5px at 45% 80%, rgb(${color} / 0.62), transparent 55%)`,
         backgroundSize: "320px 320px, 240px 240px, 200px 200px",
-        animation: "atmos-snow 11s linear infinite"
+        animation: "atmos-snow 12s linear infinite"
       }}
     />
   );
