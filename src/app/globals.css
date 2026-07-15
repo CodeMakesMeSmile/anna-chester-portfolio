@@ -16,10 +16,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(1100px circle at 50% -12%, rgb(var(--color-amber) / 0.1), transparent 60%),
-    radial-gradient(900px circle at 88% 6%, rgb(var(--color-moss) / 0.1), transparent 55%),
-    rgb(var(--color-bg));
+  /* Transparent so the fixed atmosphere backdrop (-z-10) shows through; the
+     solid base color lives on <html> to avoid any flash before hydration. */
+  background: transparent;
   color: rgb(var(--color-text));
 }
 
