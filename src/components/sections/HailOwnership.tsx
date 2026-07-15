@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const highlights = [
   {
     title: "Reusable foundation",
-    body: "Set up the shared frontend architecture the console — and later features — would build on."
+    body: "Set up the shared frontend architecture the console, and later features, would build on."
   },
   {
     title: "Operations surfaces",
@@ -27,7 +27,7 @@ export function HailOwnership() {
       <SectionHeading
         eyebrow="Ownership"
         title="Blank repository to production operations console."
-        description="As sole frontend engineer on HAIL Admin, I took an operations console from an empty repository to production on a reusable foundation — the end-to-end ownership that range alone doesn't show."
+        description="As sole frontend engineer on HAIL Admin, I took an operations console from an empty repository to production on a reusable foundation. Product, design, and engineering calls all ran through me."
       />
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {highlights.map((item) => (

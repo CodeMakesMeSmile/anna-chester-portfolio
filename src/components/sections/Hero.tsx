@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { site } from "@/data/site";
 
 /**
- * Signature moment #1. The headline is plain server-rendered HTML so it is the
- * LCP element; the weather-driven atmosphere layers behind it in Phases C/D.
+ * The headline is plain server-rendered HTML so it's the LCP element.
  */
 export function Hero() {
   return (
@@ -16,11 +15,11 @@ export function Hero() {
             I build systems that grow from idea to impact.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-text/85">
-            Web, mobile, and backend — one engineer. I turn ambiguous requirements into production
+            Web, mobile, and backend. One engineer. I turn vague requirements into production
             software people actually use.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-            A new grad who has already shipped production software for two and a half years, on a
+            A new grad who has already spent three years building production software, on a
             co-op → full-time → senior track, while teaching 1,000+ students along the way.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -45,7 +44,7 @@ export function Hero() {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-moss" />
             </span>
             <span>
-              Live demo — <span className="font-mono text-text/80">{site.liveDemo.label}</span>
+              Live demo · <span className="font-mono text-text/80">{site.liveDemo.label}</span>
             </span>
             <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
               ↗
@@ -71,7 +70,7 @@ function EngineerCard() {
         <code>{`const engineer = {
   name: "Anna Chester",
   stack: ["web", "mobile", "backend"],
-  shipping: "2.5 years, production",
+  building: "3 years, production",
   teaching: "1,000+ students",
   status: "open to work",
 };`}</code>

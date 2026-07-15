@@ -6,8 +6,8 @@ import "./globals.css";
 import { ThemeScript } from "@/components/ThemeScript";
 import { site } from "@/data/site";
 
-// Editorial serif for display voice ("idea to impact"); loaded as a variable
-// font so every weight ships in a single file.
+// Editorial serif for the display voice ("idea to impact"), loaded as a
+// variable font so every weight ships in a single file.
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap"
 });
 
-const title = "Anna Chester — Full-Stack Software Engineer";
+const title = "Anna Chester · Full-Stack Software Engineer";
 const description =
-  "Anna Chester — full-stack software engineer in Toronto, building production systems across web, mobile, and backend. Already shipping for 2.5 years, co-op to senior.";
+  "Anna Chester, full-stack software engineer in Toronto, building production systems across web, mobile, and backend. Three years in production, co-op to senior.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

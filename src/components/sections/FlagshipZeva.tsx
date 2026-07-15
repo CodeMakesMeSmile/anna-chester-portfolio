@@ -27,14 +27,14 @@ export function FlagshipZeva() {
       <SectionHeading
         eyebrow="Flagship case study"
         title="One referral engine, three tiers of the stack."
-        description="ZEVA's cross-platform referral & promotions system: cycle-based reward issuance, deep-link acquisition, and signed promo redemption — the cleanest proof of range in a single project."
+        description="ZEVA's cross-platform referral and promotions system: cycle-based reward issuance, deep-link acquisition, and signed promo redemption. One feature that had to be right across the whole stack."
       />
       <div className="mt-8 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="section-shell flex flex-col p-6 sm:p-8">
           <p className="text-base leading-8 text-text/82">
-            I built one referral system that lives in three places at once — the backend that issues
-            rewards, the web flow that manages them, and the mobile app that redeems them. The
-            interesting part is where a single idea takes root across a whole stack.
+            I built one referral system that lives in three places at once. The backend issues the
+            rewards, the web flow manages them, and the mobile app redeems them. One feature, kept
+            consistent across an entire stack.
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5">
             {stack.map((tag) => (
@@ -82,14 +82,12 @@ function SystemFlowDiagram() {
         </marker>
       </defs>
 
-      {/* Edges: clients -> backend -> data */}
       <g fill="none" strokeWidth="1.75" className="stroke-line">
         <path d="M212 69 C 244 69, 244 152, 268 152" markerEnd="url(#flow-arrow)" />
         <path d="M212 251 C 244 251, 244 168, 268 168" markerEnd="url(#flow-arrow)" />
         <path d="M464 160 H 498" markerEnd="url(#flow-arrow)" />
       </g>
 
-      {/* Nodes */}
       {nodes.map((node) => (
         <g key={node.label}>
           <rect

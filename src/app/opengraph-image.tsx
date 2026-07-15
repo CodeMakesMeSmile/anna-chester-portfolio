@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/og";
 import { Logo } from "@/components/ui/Logo";
 
-// Twilight-greenhouse social card. This is what recruiters see when the link is
-// shared on LinkedIn, Slack, or email. Runs on the edge (Vercel's recommended
-// runtime for OG images) so it's generated on demand and cached.
+// Social card recruiters see when the link is shared. Runs on the edge
+// (Vercel's recommended runtime for OG images) so it's generated on demand
+// and cached.
 export const runtime = "edge";
-export const alt = "Anna Chester — Full-Stack Software Engineer";
+export const alt = "Anna Chester · Full-Stack Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

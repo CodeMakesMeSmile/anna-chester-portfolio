@@ -24,7 +24,7 @@ export const experience: ExperienceItem[] = [
     company: "DBRS Morningstar",
     timeframe: "2023",
     summary:
-      "Full-stack web development in an enterprise agile environment with Angular, Node.js, .NET, and MySQL — and led the SonarQube rollout by standing up CI/CD pipelines in Jenkins and TeamCity so analysis ran on every commit and pull request.",
+      "Full-stack web development in an enterprise agile environment with Angular, Node.js, .NET, and MySQL. Led the SonarQube rollout by standing up CI/CD pipelines in Jenkins and TeamCity, so analysis ran on every commit and pull request.",
     tags: ["Angular", ".NET", "Node.js", "MySQL", "Jenkins", "TeamCity", "SonarQube", "CI/CD"]
   },
   {
@@ -32,7 +32,7 @@ export const experience: ExperienceItem[] = [
     company: "University of Toronto",
     timeframe: "2022 – Present",
     summary:
-      "Supported 1,000+ students across 12+ course offerings — reviewing builds, debugging, checking deployments, and helping projects become working software.",
+      "Supported 1,000+ students across 12+ course offerings, reviewing builds, debugging, checking deployments, and helping projects become working software.",
     tags: ["Teaching", "Debugging", "Testing", "Deployment support", "Code review"]
   }
 ];

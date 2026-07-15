@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn";
 
-/** Centered page-width wrapper shared by the home page and case-study routes. */
 export function Container({
   className,
   children

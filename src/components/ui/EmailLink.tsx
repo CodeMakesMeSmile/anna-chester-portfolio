@@ -10,8 +10,8 @@ type EmailLinkProps = {
 };
 
 /**
- * Opens a mailto without ever writing the full address into the server HTML —
- * the parts are joined only on click, which turns away the simplest scrapers.
+ * Opens a mailto without ever writing the full address into the server HTML.
+ * The parts are joined only on click, which turns away the simplest scrapers.
  */
 export function EmailLink({ user, domain, className, children }: EmailLinkProps) {
   return (
