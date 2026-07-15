@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { NavItem } from "@/data/site";
+import { Readout } from "@/components/atmosphere/Readout";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
@@ -32,9 +33,9 @@ export function Nav({ name, navItems }: NavProps) {
   }, []);
 
   return (
-    <header className="sticky top-4 z-30 mb-16 rounded-[1.75rem] border border-line/80 bg-surface/80 px-3 py-3 shadow-soft backdrop-blur-xl sm:px-5">
+    <header className="sticky top-4 z-30 mb-16 -mx-[13px] rounded-[1.75rem] border border-line/80 bg-surface/80 px-3 py-3 shadow-soft backdrop-blur-xl sm:-mx-[21px] sm:px-5">
       <nav aria-label="Main navigation">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-4">
           <a
             href="#top"
             className="flex min-h-11 items-center gap-3 rounded-full pr-3 text-text focus-ring"
@@ -49,12 +50,12 @@ export function Nav({ name, navItems }: NavProps) {
             </span>
           </a>
           <div className="flex items-center gap-2">
-            <div className="hidden items-center gap-1 rounded-full border border-line/70 bg-surfaceStrong/70 p-1 md:flex">
+            <div className="hidden h-11 items-center gap-1 rounded-full border border-line/70 bg-surfaceStrong/70 p-1 md:flex">
               {navItems.map((item) => (
                 <NavLink key={item.href} href={item.href} label={item.label} />
               ))}
             </div>
-            {/* Live Toronto time + weather readout mounts here in Phase C. */}
+            <Readout />
             <ThemeToggle />
             <button
               type="button"

@@ -16,10 +16,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(1100px circle at 50% -12%, rgb(var(--color-amber) / 0.1), transparent 60%),
-    radial-gradient(900px circle at 88% 6%, rgb(var(--color-moss) / 0.1), transparent 55%),
-    rgb(var(--color-bg));
+  /* Transparent so the fixed atmosphere backdrop (-z-10) shows through; the
+     solid base color lives on <html> to avoid any flash before hydration. */
+  background: transparent;
   color: rgb(var(--color-text));
 }
 
@@ -108,5 +107,62 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Decorative precipitation for the 2D atmosphere (paused under reduced motion). */
+@keyframes atmos-drop {
+  from {
+    transform: translate3d(0, -14vh, 0) rotate(9deg);
+  }
+  to {
+    transform: translate3d(5vw, 112vh, 0) rotate(9deg);
+  }
+}
+
+/* Individual snowflakes drifting down with a gentle sideways sway. */
+@keyframes atmos-snowfall {
+  from {
+    transform: translate3d(0, -12vh, 0);
+  }
+  to {
+    transform: translate3d(var(--snow-sway, 2vw), 114vh, 0);
+  }
+}
+
+/* Ambient dust drifting slowly upward through the light. */
+@keyframes atmos-dust {
+  to {
+    background-position: 30px -220px, -20px -180px, 25px -260px, -15px -160px;
+  }
+}
+
+/* Solar flares for a clear sky: a breathing sun, slow crepuscular rays, and
+   twinkling lens-flare orbs. */
+@keyframes atmos-flare-pulse {
+  0%,
+  100% {
+    opacity: 0.82;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes atmos-flare-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes atmos-flare-orb {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.62;
+    transform: scale(1.12);
   }
 }

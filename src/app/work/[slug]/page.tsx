@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Fallback2D } from "@/components/atmosphere/Fallback2D";
+import { Atmosphere } from "@/components/atmosphere/Atmosphere";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Container } from "@/components/ui/Container";
@@ -37,7 +37,7 @@ export default function CaseStudyPage({ params }: { params: Params }) {
 
   return (
     <>
-      <Fallback2D />
+      <Atmosphere />
       <Container className="flex min-h-screen flex-col pb-16 pt-4">
         <PageHeader name={site.name} />
         <main id="content" className="flex flex-col gap-14">

@@ -70,7 +70,7 @@ function SystemFlowDiagram() {
 
   return (
     <svg
-      viewBox="0 0 680 320"
+      viewBox="0 0 712 320"
       className="h-auto w-full"
       role="img"
       aria-label="System flow: the Angular web and Flutter mobile clients both call the Django backend, which persists referral and reward state to PostgreSQL."
