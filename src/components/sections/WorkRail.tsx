@@ -68,7 +68,6 @@ const environments: Environment[] = [
     environment: "Mentorship · 1,000+ students",
     summary:
       "Nearly four years as a University of Toronto TA, reading unfamiliar code, debugging, and explaining until it clicks.",
-      "Nearly four years as a University of Toronto TA, reading unfamiliar code, debugging, and explaining until it clicks.",
     tags: ["Debugging", "Mentorship", "Communication"],
     href: "#teaching",
     cta: "Jump to teaching"
