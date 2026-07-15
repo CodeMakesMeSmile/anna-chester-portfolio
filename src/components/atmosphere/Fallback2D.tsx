@@ -95,17 +95,43 @@ function Dust({ theme }: { theme: Theme }) {
   );
 }
 
+// A field of individual raindrops, varied in position, length, speed, and
+// opacity. Computed once and deterministically (no Math.random at render), so
+// server and client markup match. ~60 streaks reads as rain far more naturally
+// than a gradient, while staying cheap enough for a decorative backdrop.
+const RAIN_DROPS = Array.from({ length: 60 }, (_, i) => {
+  const rand = (seed: number) => {
+    const x = Math.sin(i * 91.73 + seed * 47.29) * 43758.5453;
+    return Math.round((x - Math.floor(x)) * 1000) / 1000;
+  };
+  return {
+    left: rand(1) * 100,
+    length: 34 + rand(2) * 52,
+    duration: 0.7 + rand(3) * 0.7,
+    delay: -(rand(4) * 2.4),
+    opacity: 0.1 + rand(5) * 0.26
+  };
+});
+
 function Rain({ intensity, color }: { intensity: number; color: string }) {
+  const count = Math.round(30 + intensity * 30);
   return (
-    <div
-      className="absolute inset-0 motion-reduce:hidden"
-      style={{
-        opacity: 0.14 + intensity * 0.18,
-        backgroundImage: `repeating-linear-gradient(95deg, rgb(${color} / 0) 0px, rgb(${color} / 0) 26px, rgb(${color} / 0.32) 27px, rgb(${color} / 0) 29px)`,
-        backgroundSize: "100% 700px",
-        animation: "atmos-rain 0.8s linear infinite"
-      }}
-    />
+    <div className="absolute inset-0 motion-reduce:hidden">
+      {RAIN_DROPS.slice(0, count).map((drop, i) => (
+        <span
+          key={`drop-${i}`}
+          className="absolute top-0 rounded-full"
+          style={{
+            left: `${drop.left}%`,
+            width: "1.4px",
+            height: `${drop.length}px`,
+            opacity: drop.opacity,
+            background: `linear-gradient(to bottom, rgb(${color} / 0), rgb(${color} / 0.55), rgb(${color} / 0))`,
+            animation: `atmos-drop ${drop.duration}s linear ${drop.delay}s infinite`
+          }}
+        />
+      ))}
+    </div>
   );
 }
 

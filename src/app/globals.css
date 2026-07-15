@@ -111,12 +111,12 @@ a {
 }
 
 /* Decorative precipitation for the 2D atmosphere (paused under reduced motion). */
-@keyframes atmos-rain {
+@keyframes atmos-drop {
   from {
-    background-position: 0 0;
+    transform: translate3d(0, -14vh, 0) rotate(9deg);
   }
   to {
-    background-position: 0 700px;
+    transform: translate3d(5vw, 112vh, 0) rotate(9deg);
   }
 }
 
