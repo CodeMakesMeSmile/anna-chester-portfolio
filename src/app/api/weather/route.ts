@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { codeToWeather, type WeatherCondition } from "@/lib/weather";
 
+// Render this handler on every request
+export const dynamic = "force-dynamic";
+
 // Toronto. Kept server-side so there are no client CORS or rate-limit surprises.
 const TORONTO = { latitude: 43.6532, longitude: -79.3832 };
 const ENDPOINT =
@@ -23,7 +26,11 @@ export async function GET() {
 
     const data = await response.json();
     const current = data?.current;
-    if (!current || typeof current.weather_code !== "number") {
+    if (
+      !current ||
+      typeof current.weather_code !== "number" ||
+      typeof current.temperature_2m !== "number"
+    ) {
       throw new Error("Unexpected Open-Meteo payload");
     }
 
