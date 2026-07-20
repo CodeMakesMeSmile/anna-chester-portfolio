@@ -44,17 +44,7 @@ const environments: Environment[] = [
     cta: "Read case study"
   },
   {
-    name: "Prime Standard",
-    environment: "Live · legacy modernization",
-    summary:
-      "A live FrontAccounting/PHP site modernized in place: a design-system retrofit, an invoice generator, and hardened forms, all with no build step. A second live anchor you can click.",
-    tags: ["PHP", "Vanilla JS", "Security"],
-    href: "/work/prime-standard",
-    cta: "Read case study",
-    live: "https://primestandard.ca"
-  },
-  {
-    name: "Prime Standard",
+    name: "Prime Accounts Inc",
     environment: "Live · legacy modernization",
     summary:
       "A live FrontAccounting/PHP site modernized in place: a design-system retrofit, an invoice generator, and hardened forms, all with no build step. A second live anchor you can click.",
